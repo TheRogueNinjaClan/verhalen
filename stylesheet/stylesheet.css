@@ -1,12 +1,13 @@
 @font-face {
   font-family: nssans;
-  src: url(font/nssans.woff) format('woff');
-  src: url(font/nssans.ttf) format('ttf');
+  src: url(font/nssans.woff);
+  src: url(font/nssans.ttf);
 }
 
 :root{
   --primary-color:#ffc917;
-  --secondary-color:#0079d3;
+  --secondary-color:#003082;
+  --accent-color:#0079d3;
   --button-height: 3.5em;
 }
 
@@ -16,24 +17,61 @@
   padding: 0;
 }
 
-header{
-  height:  20vh;
-  background-color: red;
-}
-
 main{
   display:flex;
+  flex-wrap:wrap;
   justify-content:center;
-  align-items:center;
+}
 
+img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+h1{
+  color: var(--secondary-color);
+  font-size: 3.5em;
+  text-allign:center;
+}
+
+p{
+  font-size:1.1414em;
+  margin-top:1.5em;
+  line-height:1.4em;
+}
+
+h1+p{
+  margin-top: 4em;
+}
+
+h1+p::first-letter{
+  color:var(--secondary-color);
+  font-size:4em;
+  float:left;
+  margin:0.25em 0.1em 0.12em 0;
+}
+
+article h1{
+  text-allign:center;
+}
+
+header{
+  height:  35vh;
+  background-color: red;
+  vertical-allign:top;
+  object-fit:contain;
 }
 
 section{
   background-color:green;
+  width:15em;
+  height:20em;
+  margin:1em;
 }
 
 article{
-  background-color:lightblue;
+  padding:6%;
 }
 
 div{
@@ -41,6 +79,10 @@ div{
   height:100vh;
   padding:2em;
   background-color: var(--primary-color);
+}
+
+form{
+  color:var(--secondary-color);
 }
 
 form input{
@@ -72,5 +114,5 @@ fieldset{
 
 legend{
   font-size:1.7em;
-  margin-bottom:2.5em;
+  margin-bottom:1em;
 }
