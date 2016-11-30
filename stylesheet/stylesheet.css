@@ -1,118 +1,380 @@
 @font-face {
-  font-family: nssans;
-  src: url(font/nssans.woff);
-  src: url(font/nssans.ttf);
+    font-family: 'nssans';
+    src: url("../font/nssans.woff"), 
+    url("../font/nssans.ttf"); 
 }
 
-:root{
-  --primary-color:#ffc917;
-  --secondary-color:#003082;
-  --accent-color:#0079d3;
-  --button-height: 3.5em;
+@font-face{
+    font-family: "nssans_bold";
+    src: url("../font/nssans_bold.ttf");
 }
 
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+    --primary-color: #FFB310;
+    --secondary-color: #003082;
+    --accent-color: #0079d3;
+    --button-height: 3.5em;
 }
 
-main{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'nssans',Segoe UI,Myriad,Verdana,sans-serif;
 }
 
-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+main {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-h1{
-  color: var(--secondary-color);
-  font-size: 3.5em;
-  text-allign:center;
+h1 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    font-family: 'nssans_bold',Segoe UI,Myriad,Verdana,sans-serif;
 }
 
-p{
-  font-size:1.1414em;
-  margin-top:1.5em;
-  line-height:1.4em;
+a {
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-h1+p{
-  margin-top: 4em;
+button {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-h1+p::first-letter{
-  color:var(--secondary-color);
-  font-size:4em;
-  float:left;
-  margin:0.25em 0.1em 0.12em 0;
-}
-
-article h1{
-  text-allign:center;
-}
-
-header{
-  height:  35vh;
-  background-color: red;
-  vertical-allign:top;
-  object-fit:contain;
-}
-
-section{
-  background-color:green;
-  width:15em;
-  height:20em;
-  margin:1em;
-}
-
-article{
-  padding:6%;
-}
-
-div{
-  width:100vw;
-  height:100vh;
-  padding:2em;
-  background-color: var(--primary-color);
-}
-
-form{
-  color:var(--secondary-color);
-}
-
-form input{
-  display:block;
-  width:100%;
-  height:3.5em;
-  border:none;
-  margin:0.7em 0 2.2em 0;
-  padding-left:1em;
-}
-
-form input:focus{
-  outline:none;
+button:hover{
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 
-button{
-  background-color: var(--secondary-color);
-  height:var(--button-height);
-  width:11em;
-  border:none;
-  color:white;
-  margin-top:1em;
+/*******************************************Header***************************/
+
+
+/*navigatie*/
+
+header ul {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 2em;
 }
 
-fieldset{
-  border:none;
+
+/*de iconen heeft de 50% hoogte van de ul (logo,search en aanmelden)*/
+
+header li {
+    height: 50%;
 }
 
-legend{
-  font-size:1.7em;
-  margin-bottom:1em;
+
+/*zorgt dat de logo aan de linker kant van de nav komt*/
+
+header > ul li:first-child {
+    margin-right: auto;
+}
+
+
+/*margin tussen login en search*/
+
+header > ul li:nth-child(2) {
+    margin-right: 2em;
+}
+
+header section article{
+    padding:0;
+    margin:0;;
+}
+
+header section article a:hover{
+    :red;
+}
+
+header section {
+    position: relative;
+}
+
+
+/*overlay over de image. bron: http://stackoverflow.com/questions/23935758/gradient-over-img-tag-using-css*/
+
+header section:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 99.7%;
+    background-color: rgba(255, 179, 16, 0.25);
+    display:none;
+}
+
+
+/*h1 centreren op basis van de image*/
+
+header h1 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 35%;
+    color: white;
+    z-index: 2;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+
+/*de lijn tussen de main nav en uitlicht is verborgen*/
+
+header section a {
+    background-color:var(--primary-color);
+}
+
+header nav ul li:first-child{
+    border-bottom:var(--accent-color) solid 0.3rem;
+
+}
+
+
+/*uitgelicht afbeelding*/
+
+header img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*zorgt dat de plaatje in de container past*/
+
+header ul img {
+    height: 100%;
+    width: initial;
+}
+
+
+/*main navigatie*/
+
+nav ul {
+    padding: 0;
+}
+
+
+/*li neemt vult alle ruimte van ul*/
+
+nav ul li {
+    height: 100%;
+    line-height: 2.5em;
+    text-align: center;
+    width: 25%;
+    /*elk menu krijgt 25% van de breedte*/
+}
+
+
+/*zorgt dat link de hele li vult*/
+
+nav ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+nav ul li a:hover{
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+/****************************main overzicht*********************************/
+
+.overzicht {
+    justify-content: center;
+}
+
+
+/*formaat van de section in overzicht*/
+
+.overzicht section {
+    width: 22em;
+    height: 16em;
+    margin: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    ;
+}
+
+
+/*zorgt dat de link de hele ruimte van de sectin in beslag neemt*/
+
+.overzicht a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1.5em;
+    overflow: hidden;
+}
+
+
+/*plaatje in de link neemt maar een gedeelte van de ruimte in beslag*/
+
+.overzicht section a img {
+    background-color: blue;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.overzicht section h2 {
+    margin: 0.5rem 1rem;
+    color: var(--secondary-color);
+}
+
+.overzicht section p {
+    margin: 0 1rem;
+    color: black;
+}
+
+
+/*voegt ... toe aan de html (achter de p)*/
+
+.overzicht section p::after {
+    content: " ..."
+}
+
+
+/*filter button*/
+
+.overzicht button {
+    height: 5em;
+    width: 5em;
+    background-color: var(--accent-color);
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: 50%;
+}
+
+.overzicht button img {
+    height: 80%;
+    height:80%;
+    border-radius:50%;
+}
+
+
+/***************************************************************************/
+
+div {
+    width: 100vw;
+    height: 100vh;
+    padding: 2em;
+    background-color: var(--primary-color);
+}
+
+form {
+    color: var(--secondary-color);
+}
+
+form input {
+    display: block;
+    width: 100%;
+    height: 3.5em;
+    border: none;
+    margin: 0.7em 0 2.2em 0;
+    padding-left: 1em;
+}
+
+form input:focus {
+    outline: none;
+}
+
+button {
+    background-color: var(--secondary-color);
+    height: var(--button-height);
+    width: 11em;
+    border: none;
+    color: white;
+    margin-top: 1em;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 1.7em;
+    margin-bottom: 1em;
+}
+
+
+/*********************************************Detail pagina*****************************/
+
+span+p::first-letter {
+    color: var(--secondary-color);
+    font-size: 4em;
+    float: left;
+    margin: 0.25em 0.1em 0.12em 0;
+}
+
+/*article {
+    padding: 2em;
+    max-width: 43em;
+}
+*/
+
+.storie_main_container {
+    display: flex;
+    justify-content: center;
+}
+
+.storie {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/**********************************************Media queries*******************************/
+
+@media (max-width:19.999em) {
+    /*uitgelicht sectie word verwijderd*/
+    header section {
+        display: none;
+    }
+    /*zorgt dat de hoofd nav onder elkaar komt*/
+    nav ul li {
+        width: 100%;
+    }
+    /*zorg dat de menu en overzicht niet overllappen*/
+    .overzicht {
+        margin-top: 7.5rem;
+    }
+}
+
+
+/*Als de tekst van de detail pagina niet meer leesbaar word*/
+
+@media (min-width:30.250em) {
+    .body_bigger_than_mobile {
+        background-color: #e8e8e8;
+    }
+    article {
+        background-color: white;
+        padding: 4.5em;
+    }
+    .uitgelicht {}
+    .uitgelicht span {
+        margin-bottom: 1.5rem;
+    }
+    .uitgelicht p {
+        font-size: 1.4em;
+        padding: 1.5rem;
+        max-width: 25em;
+    }
 }
