@@ -1,18 +1,19 @@
 @font-face {
-    font-family: 'nssans';
-    src: url("../font/nssans.woff"), 
-    url("../font/nssans.ttf"); 
+    font-family: nssans;
+    src: url("../font/nssans.woff"),
+    url("../font/nssans.ttf");
 }
 
 @font-face{
-    font-family: "nssans_bold";
-    src: url("../font/nssans_bold.ttf");
+    font-family: nssansbold;
+    src: url("../font/nssansbold.ttf");
 }
 
 :root {
     --primary-color: #FFB310;
     --secondary-color: #003082;
     --accent-color: #0079d3;
+    --background-color:rgba(10,10,10,0.08);
     --button-height: 3.5em;
 }
 
@@ -20,7 +21,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'nssans',Segoe UI,Myriad,Verdana,sans-serif;
+    font-family: nssans,Segoe UI,Myriad,Verdana,sans-serif;
+    transition: all 1s;
 }
 
 main {
@@ -31,7 +33,7 @@ main {
 h1 {
     color: var(--secondary-color);
     font-size: 1.5em;
-    font-family: 'nssans_bold',Segoe UI,Myriad,Verdana,sans-serif;
+    font-family: nssans_bold,Segoe UI,Myriad,Verdana,sans-serif;
 }
 
 a {
@@ -56,11 +58,9 @@ button:hover{
 
 header ul {
     background-color: var(--primary-color);
-    width: 100%;
     height: 2.5rem;
     display: flex;
     justify-content: flex-end;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
@@ -93,10 +93,6 @@ header section article{
     margin:0;;
 }
 
-header section article a:hover{
-    :red;
-}
-
 header section {
     position: relative;
 }
@@ -112,7 +108,6 @@ header section:after {
     width: 100%;
     height: 99.7%;
     background-color: rgba(255, 179, 16, 0.25);
-    display:none;
 }
 
 
@@ -165,6 +160,7 @@ header ul img {
 
 nav ul {
     padding: 0;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.26);
 }
 
 
@@ -198,24 +194,25 @@ nav ul li a:hover{
 
 .overzicht {
     justify-content: center;
+    background-color:rgba(0, 0, 0, 0.07);
 }
 
 
 /*formaat van de section in overzicht*/
 
-.overzicht section {
+.overzicht article {
     width: 22em;
     height: 16em;
     margin: 1rem;
+    background-color:white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    ;
 }
-
 
 /*zorgt dat de link de hele ruimte van de sectin in beslag neemt*/
 
 .overzicht a {
     display: block;
+    position:relative;
     width: 100%;
     height: 100%;
     padding-bottom: 1.5em;
@@ -225,19 +222,28 @@ nav ul li a:hover{
 
 /*plaatje in de link neemt maar een gedeelte van de ruimte in beslag*/
 
-.overzicht section a img {
-    background-color: blue;
+.overzicht article a img {
     width: 100%;
     height: 60%;
     object-fit: cover;
 }
 
-.overzicht section h2 {
+.overzicht article a img[src$="bookmark.svg"]{
+    position:absolute;
+    left:1em;
+    top:0;
+    width:2.5em;
+    height:auto;
+    margin:0;
+    z-index:1;
+}
+
+.overzicht article h2 {
     margin: 0.5rem 1rem;
     color: var(--secondary-color);
 }
 
-.overzicht section p {
+.overzicht article p {
     margin: 0 1rem;
     color: black;
 }
@@ -245,7 +251,7 @@ nav ul li a:hover{
 
 /*voegt ... toe aan de html (achter de p)*/
 
-.overzicht section p::after {
+.overzicht article p::after {
     content: " ..."
 }
 
@@ -264,39 +270,50 @@ nav ul li a:hover{
 
 .overzicht button img {
     height: 80%;
-    height:80%;
     border-radius:50%;
 }
 
 
-/***************************************************************************/
+/*********************************** Registreren************************************/
 
-div {
-    width: 100vw;
-    height: 100vh;
-    padding: 2em;
-    background-color: var(--primary-color);
+.aanmelden{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:100vw;
+    min-height:100vh; /*wanneer de scherm groter is dan de form, zorgt dan dat de het aanmeld section de hele scherm vult*/
+    padding: 5%;
+    background-color: var(--background-color);
+    color:var(--secondary-color);
 }
-
-form {
+.aanmelden form {
     color: var(--secondary-color);
+    background-color:white;
+    height:10%;
+    padding:2rem;
+    width:100%;
+    max-width: 30em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-form input {
+.aanmelden form input {
     display: block;
     width: 100%;
     height: 3.5em;
     border: none;
     margin: 0.7em 0 2.2em 0;
     padding-left: 1em;
+    border:solid 1px var(--background-color);
 }
 
-form input:focus {
+.aanmelden form input:focus {
     outline: none;
+    
 }
 
-button {
-    background-color: var(--secondary-color);
+.aanmelden form button {
+    background-color: var(--accent-color);
     height: var(--button-height);
     width: 11em;
     border: none;
@@ -304,14 +321,34 @@ button {
     margin-top: 1em;
 }
 
-fieldset {
+.aanmelden fieldset {
     border: none;
 }
 
-legend {
-    font-size: 1.7em;
-    margin-bottom: 1em;
+.aanmelden legend {
+    font-family:nssansbold;
+    font-size:1.7em;
+    margin-bottom: 1.7rem;
 }
+
+.aanmelden form button[name="annuleren"]{
+    color:var(--accent-color);
+    background-color:transparent;
+    margin-right:1rem;
+}
+
+/*instructie sectie van aamelden*/
+.instructie{
+    width:30em; /*zelfde als form van registreren*/
+    height:37.438em; /*599px zelfde hoogte als aanmeld form*/
+    display:none;
+    }
+
+    .instructie img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    }
 
 
 /*********************************************Detail pagina*****************************/
@@ -354,27 +391,85 @@ span+p::first-letter {
     /*zorg dat de menu en overzicht niet overllappen*/
     .overzicht {
         margin-top: 7.5rem;
+        font-size:80%;
     }
 }
 
 
 /*Als de tekst van de detail pagina niet meer leesbaar word*/
 
-@media (min-width:30.250em) {
+@media (min-width:33.250em) {
     .body_bigger_than_mobile {
         background-color: #e8e8e8;
     }
+
+    /*pas als ik aan de detail tekst ga werken
     article {
         background-color: white;
         padding: 4.5em;
     }
-    .uitgelicht {}
+
+    */
+
+    /*uitgelicht sectie (header van de homepage)*/
     .uitgelicht span {
         margin-bottom: 1.5rem;
     }
+
     .uitgelicht p {
         font-size: 1.4em;
         padding: 1.5rem;
         max-width: 25em;
     }
+
+    /*artikelen worden breder zodat deze gebruiken kan maken van de
+        extra ruimte*/
+    .overzicht article{
+        height:12em;
+        width:32em;
+        display:inline-block;
+    }
+
+    .overzicht article a{
+        padding-bottom:0;
+    }
+
+    /*afbeelding komt aan de linker kant*/
+    .overzicht article a img{;
+        float:left;
+        height:100%;
+        width:9em;/*a4 verhouding*/
+        margin-right:1em;
+    }
+
+}
+
+@media (min-width:49em) {
+    .body_bigger_than_mobile {
+        background-color: #e8e8e8;
+    }
+
+    /*pas als ik aan de detal tekst ga werken
+    article {
+        background-color: white;
+        padding: 4.5em;
+    }
+
+    */
+
+    /*uitgelicht sectie (header van de homepage)*/
+
+ /*zorgt dat de artikelen klein worden zodat ze naast elkaar kunnnen*/
+    .overzicht article{
+        height:12em;
+        width:22.5em;
+        display:inline-block;
+    }
+    
+    /*toon de instructie van registreren*/
+    .instructie{
+        display:block;
+    }
+
+
 }
