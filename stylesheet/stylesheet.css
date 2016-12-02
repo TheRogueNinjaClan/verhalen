@@ -294,13 +294,11 @@ nav ul li a:hover{
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    width:100%;
     max-width:28.25em;
     padding:2rem;
     background-color:white;
     z-index:3;
-    top:60em;
-    left:60em;
+    top:120vh;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transition: all 1s;
 }
