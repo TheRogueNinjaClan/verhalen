@@ -8,15 +8,37 @@
 </head>
 
 <body>
-  <header>
-   <nav>
-     <ul>
-      <li id="li_logo"><a href="#"><img src="icon/nslogo.svg" alt="logo icon"></a></li>
-      <li><a href="#"><img src="icon/person.svg" alt="person icon"></a></li>
-      <li><a href="#"><img src="icon/search.svg" alt="search icon"></a></li>
-     </ul>
-   </nav>
-  </header>
 
+<section class="filter">
+
+<h2>Filter</h2>
+
+<section class="genre">
+  <label for="correspondentie">correspondentie</label>
+  <input type="checkbox" id="correspondentie">
+  <label for="fictie">fictie</label>
+  <input type="checkbox" id="fictie">
+  <label for="non-fictie">non-fictie</label>
+  <input type="checkbox"  id="non-fictie">
+  <label for="opinie">opinie</label>
+  <input type="checkbox" id="opinie">
+  <label for="kort">kort</label>
+  <input type="checkbox" id="kort">
+</section>
+
+<section class="duur">
+<label for="duur">Duur</label>
+<input type="range" id="duur">
+</section>
+</fieldset>
+
+<section class="datum">
+  <label for="datum">Datum</label>
+  <input type="month" id="maand">
+</section>
+
+<button type="button" name="annuleren">Annuleren</button>
+<button type="button" name="aanmaken">Toepassen</button>
+</section>
 </body>
 </html>

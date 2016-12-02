@@ -22,12 +22,16 @@
     margin: 0;
     padding: 0;
     font-family: nssans,Segoe UI,Myriad,Verdana,sans-serif;
-    transition: all 1s;
+    transition: all .5s;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
+}
+
+h1, h2, h3, h4{
+    color:var(--secondary-color);
 }
 
 h1 {
@@ -44,12 +48,23 @@ a {
 button {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    background-color: var(--accent-color);
+    color:white;
+    height: var(--button-height);
+    width: 11em;
+    border: none;
+    margin-top: 2rem;
 }
 
 button:hover{
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+button[name="annuleren"]{
+    color:var(--accent-color);
+    background-color:transparent;
+    margin-right:1rem;
+}
 
 /*******************************************Header***************************/
 
@@ -273,6 +288,62 @@ nav ul li a:hover{
     border-radius:50%;
 }
 
+/************************************Filter****************************************/
+.filter{
+    position:fixed;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:100%;
+    max-width:28.25em;
+    padding:2rem;
+}
+
+.filter h2{
+    font-size:2em;
+}
+
+.filter label{
+    font-size:1.3em;
+    color:var(--secondary-color);
+}
+
+.genre{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:2rem;
+}
+
+.genre input[type=checkbox]{
+    display: none;
+}
+
+.genre input[type=checkbox]:checked + label{
+    background-color:var(--primary-color);
+
+}
+
+
+.genre label{
+    border:solid 1px var(--primary-color);
+    width:auto;
+    margin:0.1em;
+    padding:0.4em 1.5em;
+}
+
+.duur, .datum{
+    display:flex;
+    width:100%;
+    margin-top:2rem;
+}
+
+.duur input, .datum input{
+    width:50%;
+    margin-left:auto;
+}
+
+
+
 
 /*********************************** Registreren************************************/
 
@@ -457,8 +528,6 @@ span+p::first-letter {
 
     */
 
-    /*uitgelicht sectie (header van de homepage)*/
-
  /*zorgt dat de artikelen klein worden zodat ze naast elkaar kunnnen*/
     .overzicht article{
         height:12em;
@@ -470,6 +539,5 @@ span+p::first-letter {
     .instructie{
         display:block;
     }
-
-
 }
+
