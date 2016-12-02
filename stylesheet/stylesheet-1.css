@@ -291,7 +291,7 @@ nav ul li a:hover{
 /************************************Filter****************************************/
 .filter{
     position:fixed;
-    display:flex;
+    display:none;
     flex-wrap:wrap;
     justify-content:space-between;
     width:100%;
@@ -299,10 +299,8 @@ nav ul li a:hover{
     padding:2rem;
     background-color:white;
     z-index:3;
-    top:60em;
-    left:60em;
+    top:20vh;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    transition: all 1s;
 }
 
 .filter h2{
