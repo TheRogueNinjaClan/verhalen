@@ -243,9 +243,9 @@ nav ul li a:hover{
     object-fit: cover;
 }
 
-.overzicht article a img[src$="bookmark.svg"]{
+
+.overzicht .download{
     position:absolute;
-    left:1em;
     top:0;
     width:2.5em;
     height:auto;
@@ -281,6 +281,7 @@ nav ul li a:hover{
     right: 1rem;
     bottom: 1rem;
     border-radius: 50%;
+    outline: none;
 }
 
 .overzicht button img {
@@ -297,7 +298,7 @@ nav ul li a:hover{
     max-width:28.25em;
     padding:2rem;
     background-color:white;
-    z-index:3;
+    z-index:4;
     top:120vh;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transition: all 1s;
@@ -378,13 +379,13 @@ nav ul li a:hover{
     height: 3.5em;
     border: none;
     margin: 0.7em 0 2.2em 0;
-    padding-left: 1em;
-    border:solid 1px var(--background-color);
+    border-bottom:solid 1px var(--background-color);
 }
 
 .aanmelden form input:focus {
     outline: none;
-    
+    border-bottom:solid 0.2rem var(--primary-color);
+    transition:none;
 }
 
 .aanmelden form button {
@@ -466,14 +467,15 @@ span+p::first-letter {
     /*zorg dat de menu en overzicht niet overllappen*/
     .overzicht {
         margin-top: 7.5rem;
-        font-size:80%;
+        font-size:120%;
+        margin-bottom:0.5rem;
     }
 }
 
 
 /*Als de tekst van de detail pagina niet meer leesbaar word*/
 
-@media (min-width:33.250em) {
+@media (min-width:34.650em) {
     .body_bigger_than_mobile {
         background-color: #e8e8e8;
     }
@@ -501,7 +503,7 @@ span+p::first-letter {
         extra ruimte*/
     .overzicht article{
         height:12em;
-        width:32em;
+        width:50%;
         display:inline-block;
     }
 
@@ -519,7 +521,7 @@ span+p::first-letter {
 
 }
 
-@media (min-width:49em) {
+@media (min-width:53em) {
     .body_bigger_than_mobile {
         background-color: #e8e8e8;
     }
@@ -535,7 +537,7 @@ span+p::first-letter {
  /*zorgt dat de artikelen klein worden zodat ze naast elkaar kunnnen*/
     .overzicht article{
         height:12em;
-        width:22.5em;
+        width:30.5%;
         display:inline-block;
     }
     
@@ -545,3 +547,24 @@ span+p::first-letter {
     }
 }
 
+.section_test{
+    background-color:black;
+    height:100px;
+    width:100px;
+    display:none;
+}
+
+.div_background{
+    background-color:gray;
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.div_form{
+    height:400px;
+    width:400px;
+    background-color:white;
+}
