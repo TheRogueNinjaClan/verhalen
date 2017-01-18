@@ -25,11 +25,11 @@ function download(e){
 
 
   if(targetClick == 'download' && downloadToggle === true ){
-    srcImage.src = 'icon/download_check.svgz';
+    srcImage.src = 'icon/download_check.svg';
     downloadToggle = false;
   }
   else if (targetClick == 'download' && downloadToggle === false){
-    srcImage.src = 'icon/download.svgz';
+    srcImage.src = 'icon/download.svg';
     downloadToggle = true;
   }
 }
