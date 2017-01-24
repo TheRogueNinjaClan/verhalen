@@ -361,6 +361,69 @@ nav ul li a:hover{
 }
 
 
+/************************************Recent*****************************************/
+.recent{
+    height:100%;
+    width:15em;
+    background-color:rgb(216, 213, 213);
+    position:fixed;
+    top:0;
+    left:100vw;
+    z-index:2;
+    right:0;
+    border:solid var(--accent-color);
+    border-right:none;
+    padding:1em;
+}
+
+.recent p{
+    font-size:1.2em;
+    color:var(--secondary-color);
+}
+
+.overzicht .recent a{
+    background-color:white;
+    height:13em;
+    width:11.8em;
+    margin-top:1em;
+}
+
+.overzicht .recent article{
+    margin:0;
+    background-color:white;
+    box-shadow:none;
+}
+
+.overzicht .recent article p{
+    margin:0;
+    margin-left:0.1em;
+    color: var(--secondary-color);
+}
+.recent article img{
+    height:90%;
+    width:100%;
+    object-fit:cover;
+}
+
+.recent button{
+    position:absolute;
+    top:-25vh;
+    transform:rotate(90deg);
+    font-size:1em;
+    width:7em;
+    height:4.5em;
+    left:-6.8em;
+    position:relative;
+    padding-bottom:0.5em;
+    outline:none;
+}
+
+.recent button img{
+    height:1.5em;
+    position:absolute;
+    bottom:0.3rem;;
+    left:30%;
+}
 
 
 /*********************************** Registreren************************************/
@@ -433,7 +496,7 @@ nav ul li a:hover{
     display:none;
     }
 
-    .instructie img{
+.instructie img{
     height:100%;
     width:100%;
     object-fit:cover;
@@ -492,6 +555,10 @@ span+p::first-letter {
         margin-top: 7.5rem;
         font-size:120%;
         margin-bottom:0.5rem;
+    }
+
+    .recent button{
+        font-size:initial;
     }
 }
 

@@ -5,7 +5,9 @@ var  slider = document.querySelector('#duur');
 var  filter = document.querySelector('section > button');
 var filterContainer = document.querySelector('.filter');
 var downloadToggle = true;
-var spook = document.querySelectorAll('.spook')
+var spook = document.querySelectorAll('.spook');
+var recentButton = document.querySelector('.recent button');
+var recentToggle = true;
 
 //----------------------------------Function------------------------------------------
 
@@ -16,11 +18,11 @@ function download(e){
   var x = srcImage.getAttribute('src');
 
 
-  if(targetClick == 'download' && downloadToggle === true ){
+  if(targetClick === 'download' && downloadToggle === true ){
     srcImage.src = 'icon/download_check.svg';
     downloadToggle = false;
   }
-  else if (targetClick == 'download' && downloadToggle === false){
+  else if (targetClick === 'download' && downloadToggle === false){
     srcImage.src = 'icon/download.svg';
     downloadToggle = true;
   }
@@ -32,7 +34,7 @@ function showFilter(e){
 console.log(targetClick);
 
 if(targetClick == "filter"){
-  filterContainer.style.top= "20vh";
+  filterContainer.style.top = "20vh";
 }
 
 }
@@ -44,6 +46,23 @@ function filter(){
 function filterHide(){
   	filterContainer.style.top= "110vh";
     console.log('lol');
+}
+
+//slide the recent section to the screen
+function showRecent(){
+    var recentSection = document.querySelector('.recent');
+    var arrow = document.querySelector('.recent button img');
+    if(recentToggle === true){
+    recentSection.style.transform = 'translateX(-15em)';
+    arrow.style.transform = 'rotate(180deg)';
+    recentToggle = false;
+}
+
+    else{
+    recentSection.style.transform = 'translateX(0)';
+    arrow.style.transform = 'rotate(0)';
+    recentToggle = true;
+}
 }
 
 //change font
@@ -66,4 +85,5 @@ setInterval(function(){
 //----------------------------------------------Triggers---------------------------------------------
 document.addEventListener('click', download);  //verander de download image
 document.addEventListener('click', showFilter);
+recentButton.addEventListener('click', showRecent);
 filter.addEventListener('click', filterHide);
