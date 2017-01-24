@@ -8,6 +8,7 @@ var downloadToggle = true;
 var spook = document.querySelectorAll('.spook');
 var recentButton = document.querySelector('.recent button');
 var recentToggle = true;
+var  positionUitgelicht= 0;
 
 //----------------------------------Function------------------------------------------
 
@@ -65,6 +66,29 @@ function showRecent(){
 }
 }
 
+function nav(){
+  document.querySelector('.navLocation').classList.add('navLocationCheck');
+}
+
+//bron:http://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
+function showUitgelicht(){
+  var uitgelicht = document.querySelectorAll('.uitgelicht');
+
+  for(i=0; i<uitgelicht.length; i++){
+    uitgelicht[i].style.display = 'none';
+  }
+
+  positionUitgelicht++;
+  console.log(positionUitgelicht);
+
+  if (positionUitgelicht > uitgelicht.length){
+    positionUitgelicht = 1;
+  }
+
+  uitgelicht[positionUitgelicht -1].style.display = 'block';
+  setTimeout(showUitgelicht, 4000);
+}
+
 //change font
 function paranoia(){
 for(i = 0; i<spook.length; i++){
@@ -83,6 +107,8 @@ setInterval(function(){
   paranoia();
 }, 1000);
 //----------------------------------------------Triggers---------------------------------------------
+window.addEventListener('load', nav);
+window.addEventListener('load', showUitgelicht);
 document.addEventListener('click', download);  //verander de download image
 document.addEventListener('click', showFilter);
 recentButton.addEventListener('click', showRecent);
