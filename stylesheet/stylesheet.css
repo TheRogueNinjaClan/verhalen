@@ -22,11 +22,17 @@
     margin: 0;
     padding: 0;
     font-family: nssans,Segoe UI,Myriad,Verdana,sans-serif;
+    -webkit-transition: all .5s;
     transition: all .5s;
 }
 
 main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
@@ -42,11 +48,13 @@ h1 {
 
 a {
     text-decoration: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.26, 0.71, 0.16, 1.04);
     transition: all 0.3s cubic-bezier(0.26, 0.71, 0.16, 1.04);
 }
 
 button {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     background-color: var(--accent-color);
     color:white;
@@ -79,9 +87,20 @@ header:hover{
 header ul {
     background-color: var(--primary-color);
     height: 2.5rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     list-style: none;
     padding: 0 2em;
@@ -105,16 +124,20 @@ header > ul li:first-child {
 /*margin tussen login en search*/
 
 header > ul li:nth-child(2) {
-    margin-right: 2em;
+    margin-right: 5rem;
 }
 
 /*uitgelicht*/
 .uitgelicht{
     display:hidden;
-    animation-name: uitgelichtFade;
-    animation-duration: 1s;
 }
 
+.uitgelicht img{
+    -webkit-animation-name: uitgelichtFade;
+    animation-name: uitgelichtFade;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
 header section article{
     padding:0;
     margin:0;
@@ -175,6 +198,7 @@ header section a {
 header img {
     width: 100%;
     height: 50vh;
+    -o-object-fit: cover;
     object-fit: cover;
     margin: 0;
     padding: 0;
@@ -186,6 +210,56 @@ header img {
 header ul img {
     height: 100%;
     width: initial;
+}
+
+headr ul li form{
+  position:relative;
+}
+
+ul li form input[type="text"]{
+  position:absolute;
+  right:2em;
+  top:0.3rem;
+  border: none;
+  outline: none;
+  font-size:1.2em;
+  color: var(--secondary-color);
+  padding-right: 4rem;
+  padding-left:.2rem;
+  width: 0;
+  height:2rem;
+  z-index: 3;
+  -webkit-transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+ul li form input[type="text"]:focus {
+  width: 20em;
+  z-index: 1;
+  border-bottom: 1px solid var(--secondary-color);
+  cursor: text;
+  background-color: var(--primary-color);
+}
+
+ul li form input[type="submit"] {
+  height: 2em;;
+  width: 2em;
+  display: inline-block;
+  background-image:url("../icon/search.svg");
+  background-size:2em 2em;
+  background-repeat:no-repeat;
+  text-indent: 100px;
+  border: none;
+  position: absolute;
+  top: 0.3rem;
+  right: 2rem;;
+  z-index: 2;
+  cursor: pointer;
+  outline:none;
+  background-color:transparent;
 }
 
 .navLocationCheck{
@@ -227,9 +301,13 @@ nav ul li a:hover{
 }
 
 
+
 /****************************main overzicht*********************************/
 
 .overzicht {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -262,6 +340,7 @@ nav ul li a:hover{
 .overzicht article a img {
     width: 100%;
     height: 60%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -311,11 +390,37 @@ nav ul li a:hover{
     border-radius:50%;
 }
 
+/*Progressie bar*/
+
+article a div{
+    position:absolute;
+    display:block;
+    width:0;
+    left:0;
+    top:0;
+    height:2.5em;
+    background-color:var(--primary-color);
+}
+
+
+.progressieBarActive{
+    -webkit-animation: progressieBar cubic-bezier(0, 0, 0.9, 0.37) 2s;
+    animation: progressieBar cubic-bezier(0, 0, 0.9, 0.37) 2s;
+}
+
 /************************************Filter****************************************/
 .filter{
     position:fixed;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
+    -webkit-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
     flex-wrap:wrap;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
     justify-content:space-between;
     max-width:28.25em;
     padding:2rem;
@@ -323,6 +428,7 @@ nav ul li a:hover{
     z-index:4;
     top:110vh;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-transition: all 1s;
     transition: all 1s;
 }
 
@@ -342,7 +448,12 @@ nav ul li a:hover{
 }
 
 .genre{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
+    -webkit-flex-wrap:wrap;
+    -ms-flex-wrap:wrap;
     flex-wrap:wrap;
     margin-top:2rem;
 }
@@ -365,6 +476,9 @@ nav ul li a:hover{
 }
 
 .duur, .datum{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
     width:100%;
     margin-top:2rem;
@@ -424,12 +538,14 @@ nav ul li a:hover{
 .recent article img{
     height:90%;
     width:100%;
+    -o-object-fit:cover;
     object-fit:cover;
 }
 
 .recent button{
     position:absolute;
-    top:-25vh;
+    bottom: 35vh;
+    -webkit-transform:rotate(90deg);
     transform:rotate(90deg);
     font-size:1em;
     width:7em;
@@ -451,8 +567,17 @@ nav ul li a:hover{
 /*********************************** Registreren************************************/
 
 .aanmelden{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
     justify-content:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
     align-items:center;
     height:100%;
     width:100vw;
@@ -480,9 +605,15 @@ nav ul li a:hover{
     border-bottom:solid 1px var(--background-color);
 }
 
+.aanmelden form input:valid{
+  background-color: hsla(94, 91%, 74%, 0.4);
+  transition:all 15s;
+}
+
 .aanmelden form input:focus {
     outline: none;
     border-bottom:solid 0.2rem var(--primary-color);
+    -webkit-transition: none;
     transition:none;
 }
 
@@ -521,13 +652,19 @@ nav ul li a:hover{
 .instructie img{
     height:100%;
     width:100%;
+    -o-object-fit:cover;
     object-fit:cover;
     }
 
-
 /*********************************************Detail pagina*****************************/
 .verhalen{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
     justify-content:center;
     background-color:#eaeaea;
 }
@@ -551,21 +688,63 @@ span+p::first-letter {
 }
 
 .storie_main_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .storie {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
 /**********************************************Animatie************************************/
+@-webkit-keyframes uitgelichtFade {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
 @keyframes uitgelichtFade {
   from {opacity: .8} 
   to {opacity: 1}
 }
 
+@-webkit-keyframes progressieBar{
+    0% {
+        width: 0
+    }
+
+    80%{
+        width:100%;
+    }
+
+    100%{
+        width:0;
+    }
+}
+
+@keyframes progressieBar{
+    0% {
+        width: 0
+    }
+
+    80%{
+        width:100%;
+    }
+
+    100%{
+        width:0;
+    }
+}
 
 /**********************************************Media queries*******************************/
 
@@ -638,6 +817,21 @@ span+p::first-letter {
         margin-right:1em;
     }
 
+    
+@keyframes progressieBar{
+    0% {
+        width: 0
+    }
+
+    80%{
+        width:9em;
+    }
+
+    100%{
+        width:0;
+    }
+}
+
 }
 
 @media (min-width:53em) {
@@ -678,8 +872,17 @@ span+p::first-letter {
     background-color:gray;
     height:100vh;
     width:100vw;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
     display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
     justify-content:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
     align-items:center;
 }
 

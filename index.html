@@ -21,7 +21,14 @@
                 <a href="registreren.html"><img src="icon/person.svg" alt="Aanmelden"></a>
             </li>
             <li>
-                <a href="#"><img src="icon/search.svg" alt="Zoeken"></a>
+                  <form>
+                    <input id="zoeken" name='zoeken' type="text" list="data_verhalen" placeholder="Wat voor verhalen zoekt u?">
+                    <datalist id="data_verhalen">
+                      <option value="Paraoia"></option>
+                      <option value="Paraoia2"></option>
+                    </datalist>
+                    <input type="submit">
+                  </form>
             </li>
         </ul>
 
@@ -65,6 +72,7 @@
 
         <article>
             <a href="#">
+                <div></div>
                 <img class="download" src="icon/download.svg" alt="download">
                 <img src="image/foto1.png" alt="Verassing">
                 <h2>Verrassing</h2>
