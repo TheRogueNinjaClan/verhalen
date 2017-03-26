@@ -1,11 +1,13 @@
 @font-face {
     font-family: nssans;
+
     src: url("../font/nssans.woff"),
     url("../font/nssans.ttf");
 }
 
 @font-face{
     font-family: nssansbold;
+
     src: url("../font/nssansbold.ttf");
 }
 
@@ -21,9 +23,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: nssans,Segoe UI,Myriad,Verdana,sans-serif;
+
     -webkit-transition: all .5s;
     transition: all .5s;
+
+    font-family: nssans,Segoe UI,Myriad,Verdana,sans-serif;
 }
 
 main {
@@ -31,6 +35,7 @@ main {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -42,37 +47,42 @@ h1, h2, h3, h4{
 
 h1 {
     color: var(--secondary-color);
-    font-size: 1.5em;
+
     font-family: nssans_bold,Segoe UI,Myriad,Verdana,sans-serif;
+    font-size: 1.5em;
 }
 
 a {
-    text-decoration: none;
     -webkit-transition: all 0.3s cubic-bezier(0.26, 0.71, 0.16, 1.04);
     transition: all 0.3s cubic-bezier(0.26, 0.71, 0.16, 1.04);
+    text-decoration: none;
 }
 
 button {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 11em;
+    height: var(--button-height);
+    margin-top: 2rem;
+
     -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    background-color: var(--accent-color);
+
     color:white;
-    height: var(--button-height);
-    width: 11em;
     border: none;
-    margin-top: 2rem;
+    background-color: var(--accent-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 button:hover{
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     cursor:pointer;
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 button[name="annuleren"]{
+    margin-right:1rem;
+
     color:var(--accent-color);
     background-color:transparent;
-    margin-right:1rem;
 }
 
 /*******************************************Header***************************/
@@ -85,12 +95,18 @@ header:hover{
 }
 
 header ul {
-    background-color: var(--primary-color);
-    height: 2.5rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+
+    height: 2.5rem;
+    padding: 0 2em;
+
+    list-style: none;
+
+    background-color: var(--primary-color);
+
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
@@ -102,8 +118,6 @@ header ul {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    list-style: none;
-    padding: 0 2em;
 }
 
 
@@ -139,8 +153,8 @@ header > ul li:nth-child(2) {
     animation-duration: 2s;
 }
 header section article{
-    padding:0;
     margin:0;
+    padding:0;
 }
 
 header section {
@@ -151,12 +165,15 @@ header section {
 /*overlay over de image. bron: http://stackoverflow.com/questions/23935758/gradient-over-img-tag-using-css*/
 
 header section:after {
-    content: '';
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+
     width: 100%;
     height: 99.7%;
+
+    content: '';
+
     background-color: rgba(0, 0, 0, 0.43);
 }
 
@@ -165,25 +182,33 @@ header section:after {
 
 header h1 {
     position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 25%;
-    color: white;
     z-index: 2;
-    font-size: 5em;
+    top: 25%;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
     font-family: nssansbold,Segoe UI,Myriad,Verdana,sans-serif;
+    font-size: 5em;
 }
 
 header section article p{
     position:absolute;
-    width:100%;
-    top:55%;
-    margin-left:auto;
-    color:white;
-    text-align:center;
     z-index:2;
-    font-size:1.6em;
+    top:55%;
+
+    width:100%;
+    margin-left:auto;
     padding:0 20%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:1.6em;
 }
 
 
@@ -198,18 +223,19 @@ header section a {
 header img {
     width: 100%;
     height: 50vh;
-    -o-object-fit: cover;
-    object-fit: cover;
     margin: 0;
     padding: 0;
+
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 
 /*zorgt dat de plaatje in de container past*/
 
 header ul img {
-    height: 100%;
     width: initial;
+    height: 100%;
 }
 
 headr ul li form{
@@ -218,48 +244,59 @@ headr ul li form{
 
 ul li form input[type="text"]{
   position:absolute;
-  right:2em;
+  z-index: 3;
   top:0.3rem;
-  border: none;
-  outline: none;
-  font-size:1.2em;
-  color: var(--secondary-color);
-  padding-right: 4rem;
-  padding-left:.2rem;
+  right:2em;
+
   width: 0;
   height:2rem;
-  z-index: 3;
+  padding-right: 4rem;
+  padding-left:.2rem;
+
+  cursor: pointer;
   -webkit-transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
   transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
-  cursor: pointer;
+
+  color: var(--secondary-color);
+  border: none;
+  outline: none;
   background-color: transparent;
+
+  font-size:1.2em;
 }
 
 
 ul li form input[type="text"]:focus {
-  width: 20em;
   z-index: 1;
-  border-bottom: 1px solid var(--secondary-color);
+
+  width: 20em;
+
   cursor: text;
+
+  border-bottom: 1px solid var(--secondary-color);
   background-color: var(--primary-color);
 }
 
 ul li form input[type="submit"] {
-  height: 2em;;
-  width: 2em;
-  display: inline-block;
-  background-image:url("../icon/search.svg");
-  background-size:2em 2em;
-  background-repeat:no-repeat;
-  text-indent: 100px;
-  border: none;
   position: absolute;
-  top: 0.3rem;
-  right: 2rem;;
   z-index: 2;
+  top: 0.3rem;
+  right: 2rem;
+
+  display: inline-block;
+
+  width: 2em;
+  height: 2em;
+
   cursor: pointer;
+  text-indent: 100px;
+
+  border: none;
   outline:none;
   background-color:transparent;
+  background-image:url("../icon/search.svg");
+  background-repeat:no-repeat;
+  background-size:2em 2em;;;
 }
 
 .navLocationCheck{
@@ -270,6 +307,7 @@ ul li form input[type="submit"] {
 
 nav ul {
     padding: 0;
+
     box-shadow:0 2px 4px rgba(0, 0, 0, 0.26);
 }
 
@@ -277,11 +315,14 @@ nav ul {
 /*li neemt vult alle ruimte van ul*/
 
 nav ul li {
-    height: 100%;
-    line-height: 2.5em;
-    text-align: center;
-    width: 25%;
     position:relative;
+
+    width: 25%;
+    height: 100%;
+
+    text-align: center;
+
+    line-height: 2.5em;
     /*elk menu krijgt 25% van de breedte*/
 }
 
@@ -290,10 +331,12 @@ nav ul li {
 
 nav ul li a {
     display: block;
+
     width: 100%;
     height: 100%;
-    background-color: var(--primary-color);
+
     color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 nav ul li a:hover{
@@ -305,11 +348,12 @@ nav ul li a:hover{
 /****************************main overzicht*********************************/
 
 .overzicht {
+    background-color: rgba(0, 0, 0, 0.1);
+
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
 
@@ -319,6 +363,7 @@ nav ul li a:hover{
     width: 22em;
     height: 16em;
     margin: 1rem;
+
     background-color:white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -326,12 +371,14 @@ nav ul li a:hover{
 /*zorgt dat de link de hele ruimte van de sectin in beslag neemt*/
 
 .overzicht a {
-    display: block;
     position:relative;
+
+    display: block;
+    overflow: hidden;
+
     width: 100%;
     height: 100%;
     padding-bottom: 1.5em;
-    overflow: hidden;
 }
 
 
@@ -340,6 +387,7 @@ nav ul li a:hover{
 .overzicht article a img {
     width: 100%;
     height: 60%;
+
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -347,20 +395,23 @@ nav ul li a:hover{
 
 .overzicht .download{
     position:absolute;
+    z-index:1;
     top:0;
+
     width:2.5em;
     height:auto;
     margin:0;
-    z-index:1;
 }
 
 .overzicht article h2 {
     margin: 0.5rem 1rem;
+
     color: var(--secondary-color);
 }
 
 .overzicht article p {
     margin: 0 1rem;
+
     color: black;
 }
 
@@ -375,18 +426,21 @@ nav ul li a:hover{
 /*filter button*/
 
 .overzicht >button {
-    height: 5em;
-    width: 5em;
-    background-color: var(--accent-color);
     position: fixed;
     right: 1rem;
     bottom: 1rem;
+
+    width: 5em;
+    height: 5em;
+
     border-radius: 50%;
     outline: none;
+    background-color: var(--accent-color);
 }
 
 .overzicht button img {
     height: 80%;
+
     border-radius:50%;
 }
 
@@ -394,11 +448,14 @@ nav ul li a:hover{
 
 article a div{
     position:absolute;
-    display:block;
-    width:0;
-    left:0;
     top:0;
+    left:0;
+
+    display:block;
+
+    width:0;
     height:2.5em;
+
     background-color:var(--primary-color);
 }
 
@@ -411,10 +468,23 @@ article a div{
 /************************************Filter****************************************/
 .filter{
     position:fixed;
+    z-index:4;
+    top:110vh;
+
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+
+    max-width:28.25em;
+    padding:2rem;
+
+    -webkit-transition: all 1s;
+    transition: all 1s;
+
+    background-color:white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
     -webkit-flex-wrap:wrap;
     -ms-flex-wrap:wrap;
     flex-wrap:wrap;
@@ -422,18 +492,11 @@ article a div{
     -webkit-justify-content:space-between;
     -ms-flex-pack:justify;
     justify-content:space-between;
-    max-width:28.25em;
-    padding:2rem;
-    background-color:white;
-    z-index:4;
-    top:110vh;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    -webkit-transition: all 1s;
-    transition: all 1s;
 }
 
 .showFilter{
     top:20vh;
+
     background-color:red;
 }
 
@@ -443,8 +506,9 @@ article a div{
 }
 
 .filter label{
-    font-size:1.3em;
     color:var(--secondary-color);
+
+    font-size:1.3em;
 }
 
 .genre{
@@ -452,10 +516,12 @@ article a div{
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+
+    margin-top:2rem;
+
     -webkit-flex-wrap:wrap;
     -ms-flex-wrap:wrap;
     flex-wrap:wrap;
-    margin-top:2rem;
 }
 
 .genre input[type=checkbox]{
@@ -469,10 +535,11 @@ article a div{
 
 
 .genre label{
-    border:solid 1px var(--primary-color);
     width:auto;
     margin:0.1em;
     padding:0.4em 1.5em;
+
+    border:solid 1px var(--primary-color);
 }
 
 .duur, .datum{
@@ -480,6 +547,7 @@ article a div{
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+
     width:100%;
     margin-top:2rem;
 }
@@ -491,41 +559,46 @@ article a div{
 
 #duurValue{
     position:absolute;
-    right:2em;
     top:13em;
+    right:2em;
 }
 
 
 /************************************Recent*****************************************/
 .recent{
-    height:100%;
-    width:15em;
-    background-color: rgb(216, 213, 213);
     position:fixed;
-    top:0;
-    left:100vw;
     z-index:2;
+    top:0;
     right:0;
+    left:100vw;
+
+    width:15em;
+    height:100%;
+    padding:1em;
+
     border:solid var(--accent-color);
     border-right:none;
-    padding:1em;
+    background-color: rgb(216, 213, 213);
 }
 
 .recent p{
-    font-size:1.2em;
     color:var(--secondary-color);
+
+    font-size:1.2em;
 }
 
 .overzicht .recent a{
-    background-color:white;
-    height:13em;
     width:11.8em;
+    height:13em;
     margin-top:1em;
+
+    background-color:white;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .overzicht .recent article{
     margin:0;
+
     background-color:white;
     box-shadow:none;
 }
@@ -533,34 +606,41 @@ article a div{
 .overzicht .recent article p{
     margin:0;
     margin-left:0.1em;
+
     color: var(--secondary-color);
 }
 .recent article img{
-    height:90%;
     width:100%;
+    height:90%;
+
     -o-object-fit:cover;
     object-fit:cover;
 }
 
 .recent button{
     position:absolute;
+    position:relative;
     bottom: 35vh;
-    -webkit-transform:rotate(90deg);
-    transform:rotate(90deg);
-    font-size:1em;
+    left:-6.8em;
+
     width:7em;
     height:4.5em;
-    left:-6.8em;
-    position:relative;
     padding-bottom:0.5em;
+
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+
     outline:none;
+
+    font-size:1em;
 }
 
 .recent button img{
-    height:1.5em;
     position:absolute;
-    bottom:0.3rem;;
+    bottom:0.3rem;
     left:30%;
+
+    height:1.5em;;
 }
 
 
@@ -571,6 +651,15 @@ article a div{
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+
+    width:100vw;
+    height:100%;
+    min-height:100vh; /*wanneer de scherm groter is dan de form, zorgt dan dat de het aanmeld section de hele scherm vult*/
+    padding: 5%;
+
+    color:var(--secondary-color);
+    background-color: var(--background-color);
+
     -webkit-box-pack:center;
     -webkit-justify-content:center;
     -ms-flex-pack:center;
@@ -579,51 +668,51 @@ article a div{
     -webkit-align-items:center;
     -ms-flex-align:center;
     align-items:center;
-    height:100%;
-    width:100vw;
-    min-height:100vh; /*wanneer de scherm groter is dan de form, zorgt dan dat de het aanmeld section de hele scherm vult*/
-    padding: 5%;
-    background-color: var(--background-color);
-    color:var(--secondary-color);
 }
 .aanmelden form {
-    color: var(--secondary-color);
-    background-color:white;
-    height:10%;
-    padding:2rem;
     width:100%;
     max-width: 30em;
+    height:10%;
+    padding:2rem;
+
+    color: var(--secondary-color);
+    background-color:white;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .aanmelden form input {
     display: block;
+
     width: 100%;
     height: 3.5em;
-    border: none;
     margin: 0.7em 0 2.2em 0;
+
+    border: none;
     border-bottom:solid 1px var(--background-color);
 }
 
 .aanmelden form input:valid{
-  background-color: hsla(94, 91%, 74%, 0.4);
   transition:all 15s;
+
+  background-color: hsla(94, 91%, 74%, 0.4);
 }
 
 .aanmelden form input:focus {
-    outline: none;
-    border-bottom:solid 0.2rem var(--primary-color);
     -webkit-transition: none;
     transition:none;
+
+    border-bottom:solid 0.2rem var(--primary-color);
+    outline: none;
 }
 
 .aanmelden form button {
-    background-color: var(--accent-color);
-    height: var(--button-height);
     width: 11em;
-    border: none;
-    color: white;
+    height: var(--button-height);
     margin-top: 1em;
+
+    color: white;
+    border: none;
+    background-color: var(--accent-color);
 }
 
 .aanmelden fieldset {
@@ -631,27 +720,31 @@ article a div{
 }
 
 .aanmelden legend {
+    margin-bottom: 1.7rem;
+
     font-family:nssansbold;
     font-size:1.7em;
-    margin-bottom: 1.7rem;
 }
 
 .aanmelden form button[name="annuleren"]{
+    margin-right:1rem;
+
     color:var(--accent-color);
     background-color:transparent;
-    margin-right:1rem;
 }
 
 /*instructie sectie van aamelden*/
 .instructie{
+    display:none;
+
     width:30em; /*zelfde als form van registreren*/
     height:37.438em; /*599px zelfde hoogte als aanmeld form*/
-    display:none;
     }
 
 .instructie img{
-    height:100%;
     width:100%;
+    height:100%;
+
     -o-object-fit:cover;
     object-fit:cover;
     }
@@ -662,11 +755,13 @@ article a div{
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+
+    background-color:#eaeaea;
+
     -webkit-box-pack:center;
     -webkit-justify-content:center;
     -ms-flex-pack:center;
     justify-content:center;
-    background-color:#eaeaea;
 }
 
 .verhalen p{
@@ -674,16 +769,21 @@ article a div{
 }
 
 span+p::first-letter {
-    color: var(--secondary-color);
-    font-size: 4em;
     float: left;
+
     margin: 0.25em 0.1em 0.12em 0;
+
+    color: var(--secondary-color);
+
+    font-size: 4em;
 }
 
 .verhalen article {
-    padding: 2em;
     max-width: 30em;
+    padding: 2em;
+
     background-color:#fbfbfb;
+
     font-size:1.2em;
 }
 
@@ -692,6 +792,7 @@ span+p::first-letter {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -703,18 +804,104 @@ span+p::first-letter {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
+/***************************************Paranoiverhaal***********************/
+.paranoia-background{
+  position:fixed;
+  z-index:2;
+  top:0;
+
+  overflow:hidden;
+
+  width:100vw;
+  height:100vh;
+
+  color:#ab0b0b;
+  background-color:#efefef;
+
+  font-size: 1.1em;
+}
+
+.paranoiaVerhaal section{
+  position:relative;
+  z-index:3;
+
+  display:flex;
+
+  width:100%;
+
+  justify-content:center;
+}
+
+.paranoiaVerhaal article{
+}
+
+.paranoiaVerhaal article img{
+  display:block;
+
+  width:70%;
+  height:70%;
+  margin:0 auto;
+  margin-top:4em;
+
+  border:none;
+  border-radius:50%;
+  background-color:white;
+
+  object-fit:cover;
+}
+
+.paranoiaVerhaal article div{
+}
+
+.paranoiaVerhaal article p{
+  max-width:29em;
+  margin:0 auto;
+  padding-top:2em;
+  padding-right:5%;
+  padding-left:5%;
+
+  background-color:white;
+
+  font-size:1.6em;
+  line-height:1.3em;
+}
+
+.paranoiaVerhaal article .p_paranoia{
+  margin-top:-10em;
+  padding-top:10em;
+}
+
+.verhaal_responsive section{
+  width:100vw;
+
+  background-color:red;
+}
+
+.verhaal_responsive section img{
+  width:100%;
+}
+
+.img_mobile{
+  display:block;
+}
+
+.img_tablet, .img_desktop{
+  display:none;
+}
+
 /**********************************************Animatie************************************/
 @-webkit-keyframes uitgelichtFade {
-  from {opacity: .8} 
+  from {opacity: .8}
   to {opacity: 1}
 }
 @keyframes uitgelichtFade {
-  from {opacity: .8} 
+  from {opacity: .8}
   to {opacity: 1}
 }
 
@@ -760,13 +947,18 @@ span+p::first-letter {
     /*zorg dat de menu en overzicht niet overllappen*/
     .overzicht {
         margin-top: 7.5rem;
-        font-size:120%;
         margin-bottom:0.5rem;
+
+        font-size:120%;
     }
 
     .recent button{
         font-size:initial;
     }
+}
+
+@media (max-width:34.649){
+
 }
 
 
@@ -789,7 +981,7 @@ span+p::first-letter {
     .uitgelicht span {
         margin-bottom: 1.5rem;
     }
-    
+
     /*verijder deze code later als carousel klaar is
     .uitgelicht p {
         font-size: 1.4em;
@@ -800,9 +992,10 @@ span+p::first-letter {
     /*artikelen worden breder zodat deze gebruiken kan maken van de
         extra ruimte*/
     .overzicht article{
-        height:12em;
         display:inline-block;
+
         width:30em;
+        height:12em;
     }
 
     .overzicht article a{
@@ -810,14 +1003,24 @@ span+p::first-letter {
     }
 
     /*afbeelding komt aan de linker kant*/
-    .overzicht article a img{;
+    .overzicht article a img{
         float:left;
-        height:100%;
+
         width:9em;/*a4 verhouding*/
+        height:100%;
         margin-right:1em;
     }
 
-    
+        .img_tablet{
+  display:block;
+}
+
+.img_desktop, .img_mobile{
+  display:none;
+
+    }
+
+
 @keyframes progressieBar{
     0% {
         width: 0
@@ -849,33 +1052,62 @@ span+p::first-letter {
 
  /*zorgt dat de artikelen klein worden zodat ze naast elkaar kunnnen*/
     .overzicht article{
-        height:12em;
         width:30.5%;
-        min-width:22em;
-        display:inline-block;
+        height:12em;
     }
-    
+
     /*toon de instructie van registreren*/
     .instructie{
         display:block;
     }
+
+    .paranoiaVerhaal article img{
+  width:60em;
+  height:100%;
+
 }
 
+.paranoiaVerhaal article div{
+  height:52em;
+}
+
+.img_desktop{
+  display:block;
+}
+
+.img_tablet, .img_mobile{
+  display:none;
+}
+
+}
+
+
+
+
+
+
+
+
 .section_test{
-    background-color:black;
-    height:100px;
-    width:100px;
     display:none;
+
+    width:100px;
+    height:100px;
+
+    background-color:black;
 }
 
 .div_background{
-    background-color:gray;
-    height:100vh;
-    width:100vw;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
     display:flex;
+
+    width:100vw;
+    height:100vh;
+
+    background-color:gray;
+
     -webkit-box-pack:center;
     -webkit-justify-content:center;
     -ms-flex-pack:center;
@@ -887,7 +1119,8 @@ span+p::first-letter {
 }
 
 .div_form{
-    height:400px;
     width:400px;
+    height:400px;
+
     background-color:white;
 }

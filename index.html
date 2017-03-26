@@ -21,14 +21,14 @@
                 <a href="registreren.html"><img src="icon/person.svg" alt="Aanmelden"></a>
             </li>
             <li>
-                  <form>
+                <form>
                     <input id="zoeken" name='zoeken' type="text" list="data_verhalen" placeholder="Wat voor verhalen zoekt u?">
                     <datalist id="data_verhalen">
                       <option value="Paraoia"></option>
                       <option value="Paraoia2"></option>
                     </datalist>
                     <input type="submit">
-                  </form>
+                </form>
             </li>
         </ul>
 
@@ -44,14 +44,9 @@
             <article class="uitgelicht">
                 <h1>Paranoia</h1>
                 <a href="#"><img src="image/foto1.png" alt="oude stel"></a>
-                <p>De nieuwste verhaal is hier. Onverwacht is de meest recente verhaal</p>
+                <p>Lees de meest spannende verhaal NU! Paranoia is heel spannend</p>
             </article>
 
-            <article class="uitgelicht">
-                <h1>Ongeluk</h1>
-                <a href="#"><img src="image/foto2.jpg" alt="oude stel"></a>
-                <p>De nieuwste verhaal is hier. Onverwacht is de meest recente verhaal</p>
-            </article>
 
         </section>
 
@@ -69,6 +64,10 @@
 
 
     <main class="overzicht">
+
+        <section id="testFilter">
+
+        </section>
 
         <article>
             <a href="#">
@@ -125,7 +124,7 @@
             </a>
         </article>
 
-        <button  id="filterButton" type="button" name="filter"><img src="icon/filter.svg" alt="filter"></button>
+        <button id="filterButton" type="button" name="filter"><img src="icon/filter.svg" alt="filter"></button>
 
         <!--filter sectie-->
         <section class="filter">
@@ -148,7 +147,7 @@
 
             <section class="duur">
                 <label for="duur">Duur</label>
-                <input type="range" id="duur" min="0" max="60" step="10" value="60" oninput="duurValue.value = duur.value" >
+                <input type="range" id="duur" min="0" max="60" step="10" value="60" oninput="duurValue.value = duur.value">
                 <output name="duurValue" id="duurValue">60 min</output>
             </section>
 
@@ -168,17 +167,17 @@
             </p>
 
             <a href="paranoia.html">
-                 <article>
-                <img src="image/a4-paranoia.jpg" alt="Paranoia">
-                <p>Paranoia</p>
-            </article>
+                <article>
+                    <img src="image/a4-paranoia.jpg" alt="Paranoia">
+                    <p>Paranoia</p>
+                </article>
             </a>
 
             <a href="#">
-                 <article>
-                <img src="image/a4-ongeluk.jpg" alt="Paranoia">
-                <p>Ongeluk</p>
-            </article>
+                <article>
+                    <img src="image/a4-ongeluk.jpg" alt="Paranoia">
+                    <p>Ongeluk</p>
+                </article>
             </a>
 
             <button type="button" name="recent">Recent
